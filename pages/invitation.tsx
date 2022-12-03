@@ -1,43 +1,48 @@
 import React from "react"
 import Layout from "app/core/layouts/Layout"
-import Header from "../app/core/components/Header"
-import { Heading, Image, Stack, Text } from "@chakra-ui/react"
-import Headings from "../app/core/components/Headings"
+import { Flex, useMediaQuery } from "@chakra-ui/react"
+import { Document, Page, pdfjs } from "react-pdf"
 import CTA from "../app/core/components/CTA"
+import "react-pdf/dist/esm/Page/AnnotationLayer.css"
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`
 
 const Invitation = () => {
+  const [numPages, setNumPages] = React.useState(null)
+  const [isLargerThan768] = useMediaQuery("(min-width: 768px)", {
+    ssr: true,
+    fallback: false, // return false on the server, and re-evaluate on the client side
+  })
+
+  function onDocumentLoadSuccess({ numPages: nextNumPages }) {
+    setNumPages(nextNumPages)
+  }
+
+  function removeTextLayerOffset() {
+    const textLayers = window.document.querySelectorAll(".react-pdf__Page__textContent")
+    textLayers.forEach((layer: any) => {
+      const { style } = layer
+      style.display = "none"
+    })
+  }
+
   return (
-    <Layout>
-      <Header image="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80">
-        <Image src="/invitation-img-2.png" alt="invitation" />
-      </Header>
-
-      <Stack
-        py={{ base: 16, md: "10rem" }}
-        spacing={{ base: 8, md: "3rem" }}
-        align="center"
-        justify="center"
-      >
-        <Headings
-          standout="SAVE THE DATE"
-          title="Celebrate love with us"
-          subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm od tempor incidi
-            dunt ut labore et dolore magna aliqua ut enim minim veniam, quis nostrud."
-        />
-
-        <Stack textAlign="center" fontFamily="heading" fontSize="xl" spacing={0}>
-          <Text>September 20, 2020. – 4pm</Text>
-          <Text>Vineyard at Pier 26, Hudson river</Text>
-        </Stack>
-
-        <Text w={{ md: 80 }} color="gray.500" textAlign="center">
-          Please, be here on time. Wedding starts at 4pm, celebration dinner starts at 5pm.
-        </Text>
-      </Stack>
+    <Layout title="Invitation">
+      <Flex mt={60} justify="center">
+        <Document file="./invitation.pdf" onLoadSuccess={onDocumentLoadSuccess}>
+          {Array.from(new Array(numPages), (el, index) => (
+            <Page
+              key={`page_${index + 1}`}
+              pageNumber={index + 1}
+              scale={isLargerThan768 ? 3 : 1}
+              onLoadSuccess={removeTextLayerOffset}
+            />
+          ))}
+        </Document>
+      </Flex>
 
       <CTA
         btnTitle="RSVP"
-        subtitle="LINE WILL BE OPEN UNTIL SEPTEMBER 1ST"
+        subtitle=""
         title="Please, take a moment and respond to our invitation."
       />
     </Layout>

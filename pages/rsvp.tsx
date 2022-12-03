@@ -1,12 +1,9 @@
-import React from "react"
 import Header from "app/core/components/Header"
 import { Box, Heading, Image, Stack, Text } from "@chakra-ui/react"
 import Layout from "app/core/layouts/Layout"
 import useForm from "app/core/hooks/useForm"
 import FormInput from "app/core/components/Form/FormInput"
-import FormCheckboxes from "app/core/components/Form/FormCheckboxes"
 import FormSelect from "app/core/components/Form/FormSelect"
-import FormTextarea from "app/core/components/Form/FormTextarea"
 import Button from "app/core/components/Button"
 import CTA from "../app/core/components/CTA"
 
@@ -18,24 +15,17 @@ const Rsvp = () => {
       <Stack spacing={6} align="center" justify="center" w={{ md: 120 }} mx="auto">
         <FormInput name="name" placeholder="Your name" />
         <FormInput tyoe="email" name="email" placeholder="Your email" />
-        <FormCheckboxes
-          name="available"
-          options={["I will be there", "Sorry, I can't come"]}
-          oneValueOnly={true}
-          showDivider={false}
-        />
-        <FormSelect name="noOfGuests" placeholder="Number of guests" options={[1, 2, 3, 4, 5]} />
+        <FormSelect name="noOfGuests" placeholder="Number of guests" options={[1, 2, 3, 4]} />
         <FormSelect name="meal" placeholder="Meal preferences" options={["Meat", "Vegetables"]} />
-        <FormTextarea name="message" placeholder="Message" />
-        <Box w={{ md: 40 }}>
+        <Box w={{ base: 32, md: 44 }}>
           <Button
             type="submit"
             title="Submit"
             rounded="sm"
-            bg="black"
-            color="white"
-            _hover={{ bg: "black" }}
-            _focus={{ bg: "black" }}
+            bg="gold"
+            color="primaryBackground"
+            _hover={{ bg: "gold" }}
+            _focus={{ bg: "gold" }}
             w="full"
             h={12}
           />
@@ -51,12 +41,12 @@ const Rsvp = () => {
 
       <Stack py={{ base: 16, md: "7rem" }} spacing={{ base: 8, md: "4rem" }}>
         <Stack align="center" justify="center" w={{ md: 125 }} mx="auto" textAlign="center">
-          <Text>MAGICAL MOMENTS</Text>
-          <Heading as="h3" fontSize={{ base: "2xl", md: "4xl" }}>
+          <Text color="gold">MAGICAL MOMENTS</Text>
+          <Heading as="h3" color="gold" fontSize={{ base: "2xl", md: "4xl" }}>
             Will you attend to our special day?
           </Heading>
           <Image src="/separator.png" alt="separator" />
-          <Text color="gray.500">
+          <Text>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm od tempor incidi
             dunt ut labore et dolore magna aliqua ut enim minim veniam, quis nostrud.
           </Text>

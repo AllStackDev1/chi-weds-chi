@@ -14,10 +14,10 @@ const Headings = ({
     <Stack align="center" justify="center" textAlign="center" w={{ md: 125 }} mx="auto">
       <Text>{standout}</Text>
       <Image src="/separator.png" alt="separator" />
-      <Heading as="h3" fontSize={{ base: "3xl", md: "6xl" }}>
+      <Heading color="gold" as="h3" fontSize={{ base: "3xl", md: "6xl" }}>
         {title}
       </Heading>
-      <Text color="gray.500">{subtitle}</Text>
+      <Text>{subtitle}</Text>
     </Stack>
   )
 }

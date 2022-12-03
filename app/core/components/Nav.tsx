@@ -35,8 +35,8 @@ const Nav = () => {
       as="nav"
       py={{ base: 4, md: 0 }}
     >
-      <Heading as="h1" fontSize={{ base: "4xl", md: "8xl" }}>
-        Amaka & Chinedu
+      <Heading color="gold" as="h1" fontSize={{ base: "4xl", md: "8xl" }}>
+        Chiamaka & Chinedu
       </Heading>
       <HStack
         spacing={{ base: 3, md: "1rem" }}

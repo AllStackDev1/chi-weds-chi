@@ -19,28 +19,28 @@ export const NavLink = ({
   //remove the trailing slash from the pathname
   const pathName = pathname.replace(/\/$/, "")
 
-  const pathIncludes = pathName.includes(path)
+  const pathIncludes = pathName === path
 
   return (
-    <Link href={path} passHref>
-      <ChakraLink
-        as="a"
-        _hover={{
-          textDecor: "none",
-        }}
-        color={pathIncludes ? "gray.600" : "black"}
-        fontSize={{ base: "xs", md: "sm" }}
-        title={title}
-        transitionProperty="color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter"
-        transitionTimingFunction="cubic-bezier(0.4, 0, 0.2, 1)"
-        transitionDuration="500ms"
-        className="underlined"
-        letterSpacing={3}
-        textTransform="uppercase"
-        {...rest}
-      >
-        {children}
-      </ChakraLink>
-    </Link>
+    <ChakraLink
+      href={path}
+      passHref
+      as={Link}
+      _hover={{
+        textDecor: "none",
+      }}
+      color={pathIncludes ? "gold" : "white"}
+      fontSize={{ base: "xs", md: "sm" }}
+      title={title}
+      transitionProperty="color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter"
+      transitionTimingFunction="cubic-bezier(0.4, 0, 0.2, 1)"
+      transitionDuration="500ms"
+      className="underlined"
+      letterSpacing={3}
+      textTransform="uppercase"
+      {...rest}
+    >
+      {children}
+    </ChakraLink>
   )
 }

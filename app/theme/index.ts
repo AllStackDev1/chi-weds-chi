@@ -29,15 +29,16 @@ export const theme = extendTheme({
     global: (props: Dict<any> | StyleFunctionProps) => ({
       "html, body, #__next": {
         height: "100%",
-        bg: "#FFFFFF",
+        bg: "#3e1021",
         scrollBehavior: "smooth",
       },
       body: {
         fontSize: "md",
         fontFamily: '"Lato", sans-serif',
         lineHeight: "tall",
-        bg: "#FFF7E9",
+        bg: "#3e1021",
         bottom: 0,
+        color: "white",
         overflowY: "scroll",
       },
       html: {
@@ -51,7 +52,7 @@ export const theme = extendTheme({
         rounded: "lg",
       },
       "a:hover": {
-        color: "gray.600",
+        color: "#efd8bc",
       },
     }),
   },
@@ -68,12 +69,12 @@ export const theme = extendTheme({
       900: "#1f2028",
     },
     primaryGreen: "#3F4E4F",
-    primaryBackground: "#FFF7E9",
+    primaryBackground: "#3e1021",
     bgBlack: "#121212",
     bgLight: "rgb(208, 211, 225)",
     darkBlue: "#351772",
     primaryBg: "#261546",
-    cfGreen: "#5AA250",
+    gold: "#efd8bc",
     headingText: "rgb(255, 221,81)",
     primaryRed: "#f91e53",
     primaryColorScheme: {

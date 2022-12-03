@@ -159,7 +159,7 @@ const CheckingBoxes = (props: ICheckerBoxOptions & StackProps) => {
                               key={option.value}
                               size={checkBoxSize || "md"}
                               value={option.value}
-                              borderColor="gray.500"
+                              border
                               isChecked={option.value}
                               isDisabled={isSubmitting}
                             >

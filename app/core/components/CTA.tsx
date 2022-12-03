@@ -1,7 +1,7 @@
-import React from "react"
 import { Heading, Stack, Text } from "@chakra-ui/react"
 import Button from "./Button"
 import Link from "next/link"
+import { Link as ChakraLink } from "@chakra-ui/react"
 
 const Cta = ({
   btnTitle,
@@ -22,14 +22,19 @@ const Cta = ({
       px={{ base: 6, md: 0 }}
       textAlign={{ base: "center", md: "inherit" }}
     >
-      <Text color="gray.500" fontSize="sm" letterSpacing={2}>
+      <Text color={"primaryBackground"} fontSize="sm" letterSpacing={2}>
         {subtitle}
       </Text>
-      <Heading as="h4" fontSize={{ base: "3xl", md: "5xl" }} fontWeight="normal">
+      <Heading
+        color={"primaryBackground"}
+        as="h4"
+        fontSize={{ base: "3xl", md: "5xl" }}
+        fontWeight="normal"
+      >
         {title}
       </Heading>
       {btnTitle ? (
-        <Link href="/rsvp" passHref>
+        <ChakraLink href="/rsvp" passHref as={Link}>
           <Button
             mt={4}
             title={btnTitle}
@@ -43,7 +48,7 @@ const Cta = ({
             w="full"
             h={12}
           />
-        </Link>
+        </ChakraLink>
       ) : null}
     </Stack>
   )

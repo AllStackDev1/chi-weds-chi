@@ -11,7 +11,7 @@ const Layout: BlitzLayout<{ title?: string; children?: React.ReactNode }> = ({
   return (
     <Stack m={{ md: 10 }}>
       <Head>
-        <title>{title || "chimaka"}</title>
+        <title>{`ChineduAmaka | ${title}`}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -22,9 +22,7 @@ const Layout: BlitzLayout<{ title?: string; children?: React.ReactNode }> = ({
       </Box>
 
       <Flex as="footer" h={14} align="center" justify="center">
-        <Text fontSize="sm" color="gray.500">
-          Celebrating our marriage. Chinedu & Amaka 2023.
-        </Text>
+        <Text fontSize="sm">Celebrating our marriage. chineduamaka 2023.</Text>
       </Flex>
     </Stack>
   )

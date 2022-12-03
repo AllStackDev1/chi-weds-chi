@@ -1,10 +1,8 @@
-import React from "react"
 import Header from "app/core/components/Header"
 import {
   AspectRatio,
   Heading,
   HStack,
-  Icon,
   Image,
   List,
   ListIcon,
@@ -12,11 +10,8 @@ import {
   Stack,
 } from "@chakra-ui/react"
 import { HiLocationMarker, HiPhone } from "react-icons/hi"
-import CTA from "app/core/components/CTA"
+import { FaChurch } from "react-icons/fa"
 import Layout from "app/core/layouts/Layout"
-import Headings from "../app/core/components/Headings"
-import { MdEmail } from "react-icons/md"
-import { AiFillInstagram } from "react-icons/ai"
 
 const Locations = () => {
   return (
@@ -31,41 +26,92 @@ const Locations = () => {
         w={{ md: 130 }}
         mx="auto"
       >
-        <Headings
-          standout="MAGICAL MOMENTS"
-          title="We are in love with this place"
-          subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm od tempor incidi
-            dunt ut labore et dolore magna aliqua ut enim minim veniam, quis nostrud."
-        />
-
-        <HStack align="start" textAlign={{ md: "center" }} gap={{ base: 10, md: 16 }}>
+        <HStack
+          align="start"
+          textAlign={{ md: "center" }}
+          gap={{ base: 10, md: 16 }}
+          flexDir={{ base: "column", md: "row" }}
+        >
           <Stack spacing={6} minW={{ md: "40%" }}>
-            <Heading as="h4" fontWeight="normal">
-              Location & Informations
+            <Heading color="gold" as="h4" fontWeight="normal">
+              Church Venue
+            </Heading>
+
+            <List textAlign="left" spacing={2}>
+              <ListItem>
+                <ListIcon as={FaChurch} />
+                Saint Berth Anglican Church, 9 Yeside, Abeke St, Animashaun 101241, Lagos, Nigeria
+              </ListItem>
+              <ListItem>
+                <ListIcon as={HiPhone} />
+                +234 817 866 5183
+              </ListItem>
+              <ListItem>
+                <ListIcon as={HiPhone} />
+                +234 815 620 7926
+              </ListItem>
+              <ListItem>
+                <ListIcon as={HiPhone} />
+                +234 901 418 9167
+              </ListItem>
+            </List>
+          </Stack>
+
+          <AspectRatio
+            ratio={16 / 9}
+            marginInlineStart={"0 !important"}
+            minW={{ base: "full", md: "60%" }}
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31716.39561307602!2d3.2253908791015666!3d6.451837899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b889d410ffa91%3A0x9ea37ec58d96ff10!2sSt%20Barth&#39;s%20Anglican%20Church!5e0!3m2!1sen!2sgh!4v1670068718010!5m2!1sen!2sgh"
+              width="600"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </AspectRatio>
+        </HStack>
+
+        <HStack
+          align="start"
+          textAlign={{ md: "center" }}
+          gap={{ base: 10, md: 16 }}
+          flexDir={{ base: "column", md: "row" }}
+        >
+          <Stack spacing={6} minW={{ md: "40%" }}>
+            <Heading color="gold" as="h4" fontWeight="normal">
+              Reception Venue
             </Heading>
 
             <List textAlign="left" spacing={2}>
               <ListItem>
                 <ListIcon as={HiLocationMarker} />
-                Vineyard at Pier 26, Hudson river park
+                Nigerian Navy Air Base. Navy Town, Satellite Town, Ojo.
               </ListItem>
               <ListItem>
-                <ListIcon as={HiPhone} />+ 00 123 456 7
+                <ListIcon as={HiPhone} />
+                +234 817 866 5183
               </ListItem>
               <ListItem>
-                <ListIcon as={MdEmail} />
-                bridge@example.com
+                <ListIcon as={HiPhone} />
+                +234 815 620 7926
               </ListItem>
               <ListItem>
-                <ListIcon as={AiFillInstagram} />
-                #janeandarthurwedding
+                <ListIcon as={HiPhone} />
+                +234 901 418 9167
               </ListItem>
             </List>
           </Stack>
 
-          <AspectRatio ratio={16 / 9} minW={{ md: "60%" }}>
+          <AspectRatio
+            ratio={16 / 9}
+            marginInlineStart={"0 !important"}
+            minW={{ base: "full", md: "60%" }}
+          >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.779965794229!2d-0.38602368467462295!3d5.744788333317652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x84f82fb6def1875b!2zNcKwNDQnNDEuMiJOIDDCsDIzJzAxLjgiVw!5e0!3m2!1sen!2sgh!4v1667042249901!5m2!1sen!2sgh"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7929.292007185575!2d3.2765878!3d6.4394869!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b885f218be3db%3A0x5c8ddb90980bdf66!2sNigerian%20Navy%20Air%20Base.!5e0!3m2!1sen!2sgh!4v1670067849179!5m2!1sen!2sgh"
               width="600"
               height="450"
               style={{ border: 0 }}
@@ -76,8 +122,6 @@ const Locations = () => {
           </AspectRatio>
         </HStack>
       </Stack>
-
-      <CTA subtitle="HOPE TO SEE YOU" title="Thank you for responding!" />
     </Layout>
   )
 }
