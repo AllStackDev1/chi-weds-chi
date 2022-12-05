@@ -19,7 +19,7 @@ export const NavLink = ({
   //remove the trailing slash from the pathname
   const pathName = pathname.replace(/\/$/, "")
 
-  const pathIncludes = pathName === path
+  const pathIncludes = pathName ? pathName === path : path === "/"
 
   return (
     <ChakraLink
@@ -28,6 +28,9 @@ export const NavLink = ({
       as={Link}
       _hover={{
         textDecor: "none",
+      }}
+      _activeLink={{
+        color: "gold",
       }}
       color={pathIncludes ? "gold" : "white"}
       fontSize={{ base: "xs", md: "sm" }}

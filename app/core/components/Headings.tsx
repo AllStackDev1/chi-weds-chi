@@ -12,7 +12,7 @@ const Headings = ({
 }) => {
   return (
     <Stack align="center" justify="center" textAlign="center" w={{ md: 125 }} mx="auto">
-      <Text>{standout}</Text>
+      <Text color="gold">{standout}</Text>
       <Image src="/separator.png" alt="separator" />
       <Heading color="gold" as="h3" fontSize={{ base: "3xl", md: "6xl" }}>
         {title}

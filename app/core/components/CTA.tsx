@@ -14,11 +14,12 @@ const Cta = ({
 }) => {
   return (
     <Stack
+      w="full"
+      h={64}
       bg="#f7f3f1"
       align="center"
       justify="center"
-      w="full"
-      h={64}
+      rounded="md"
       px={{ base: 6, md: 0 }}
       textAlign={{ base: "center", md: "inherit" }}
     >

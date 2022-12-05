@@ -11,7 +11,7 @@ const Layout: BlitzLayout<{ title?: string; children?: React.ReactNode }> = ({
   return (
     <Stack m={{ md: 10 }}>
       <Head>
-        <title>{`ChineduAmaka | ${title}`}</title>
+        <title>{`chineduamaka | ${title}`}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

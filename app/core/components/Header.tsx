@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react"
+import { ReactNode } from "react"
 import { Flex } from "@chakra-ui/react"
 
 const Header = ({ image, children }: { image: string; children?: ReactNode }) => {
@@ -11,7 +11,8 @@ const Header = ({ image, children }: { image: string; children?: ReactNode }) =>
       bgPos="center"
       bgSize="cover"
       px={{ base: 6, md: 0 }}
-      bgImage={`linear-gradient(to right, rgba(247, 243, 241, .5), rgba(247, 243, 241, .5)), url(${image})`}
+      // bgImage={`linear-gradient(to right, rgba(247, 243, 241, .5), rgba(247, 243, 241, .5)), url(${image})`}
+      bgImage={`url(${image})`}
     >
       {children}
     </Flex>

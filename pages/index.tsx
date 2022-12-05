@@ -8,7 +8,8 @@ import CTA from "../app/core/components/CTA"
 const Home: BlitzPage = () => {
   return (
     <Layout title="Home">
-      <Header image="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80">
+      <Header image="/background.jpg">
+        {/* <Header image="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"> */}
         <Image src="/slider-2.png" alt="slider" />
       </Header>
 
@@ -23,7 +24,7 @@ const Home: BlitzPage = () => {
 
       <CTA
         btnTitle="RSVP"
-        subtitle="LINE WILL BE OPEN UNTIL SEPTEMBER 1ST"
+        subtitle=""
         title="Please, take a moment and respond to our invitation."
       />
     </Layout>
