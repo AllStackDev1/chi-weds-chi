@@ -21,21 +21,27 @@ export const navLinks = [
 const Nav = () => {
   const scrollPosition = useScrollPosition()
 
-  console.log("scrollPosition", scrollPosition)
-
   return (
     <Stack
       align="center"
       justify="center"
       textAlign="center"
-      pos={{ md: "absolute" }}
-      top={14}
+      // pos={{ md: "absolute" }}
+      top={scrollPosition > 300 ? 0 : 14}
       insetX={10}
-      spacing={{ base: 4, md: 10 }}
+      spacing={{ base: 4, md: scrollPosition > 300 ? 4 : 10 }}
       as="nav"
-      py={{ base: 4, md: 0 }}
+      py={{ base: 4, md: scrollPosition > 300 ? 4 : 0 }}
+      pos={scrollPosition > 300 ? "fixed" : "absolute"}
+      zIndex={100}
+      bg={scrollPosition > 300 ? "#3e1021" : "transparent"}
+      transition="all 0.3s ease-in-out"
     >
-      <Heading color="gold" as="h1" fontSize={{ base: "4xl", md: "8xl" }}>
+      <Heading
+        color="gold"
+        as="h1"
+        fontSize={{ base: "4xl", md: scrollPosition > 300 ? "5xl" : "8xl" }}
+      >
         Chiamaka & Chinedu
       </Heading>
       <HStack

@@ -44,7 +44,7 @@ export const theme = extendTheme({
       html: {
         margin: 0,
         padding: 0,
-        overflow: "hidden",
+        // overflow: "hidden",
       },
       "::selection": {
         bg: "#351772",
