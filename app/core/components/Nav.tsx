@@ -1,10 +1,10 @@
 import React from "react"
 import { Divider, Heading, HStack, Stack } from "@chakra-ui/react"
+import Link from "next/link"
 import { NavLink } from "./NavLink"
-import { useScrollPosition } from "../hooks/useScrollPosition"
 
 export const navLinks = [
-  { id: 1, name: "Home", path: "/" },
+  // { id: 1, name: "Home", path: "/" },
   { id: 2, name: "Invitation", path: "/invitation" },
   {
     id: 3,
@@ -16,34 +16,33 @@ export const navLinks = [
     name: "rsvp",
     path: "/rsvp",
   },
+  {
+    id: 5,
+    name: "gallery",
+    path: "/gallery",
+  },
 ]
 
 const Nav = () => {
-  const scrollPosition = useScrollPosition()
-
   return (
     <Stack
+      as="nav"
+      insetX={10}
+      zIndex={100}
+      bg="transparent"
       align="center"
       justify="center"
       textAlign="center"
-      // pos={{ md: "absolute" }}
-      top={scrollPosition > 300 ? 0 : 14}
-      insetX={10}
-      spacing={{ base: 4, md: scrollPosition > 300 ? 4 : 10 }}
-      as="nav"
-      py={{ base: 4, md: scrollPosition > 300 ? 4 : 0 }}
-      pos={scrollPosition > 300 ? "fixed" : "absolute"}
-      zIndex={100}
-      bg={scrollPosition > 300 ? "#3e1021" : "transparent"}
-      transition="all 0.3s ease-in-out"
+      pos={{ md: "absolute" }}
+      py={{ base: 4, md: 0 }}
+      spacing={{ base: 4, md: 10 }}
     >
-      <Heading
-        color="gold"
-        as="h1"
-        fontSize={{ base: "4xl", md: scrollPosition > 300 ? "5xl" : "8xl" }}
-      >
-        Chiamaka & Chinedu
-      </Heading>
+      <Link href="/">
+        <Heading as="h1" color="gold" fontSize={{ base: "4xl", md: "8xl" }}>
+          Chiamaka & Chinedu
+        </Heading>
+      </Link>
+
       <HStack
         spacing={{ base: 3, md: "1rem" }}
         divider={<Divider orientation="vertical" h={{ base: 3, md: 5 }} borderColor="gray.600" />}

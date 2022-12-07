@@ -53,7 +53,7 @@ const DataListSelect = ({
   return (
     <FormControl w={formWidth}>
       {label && (
-        <FormLabel fontSize="sm" htmlFor="data-list-select">
+        <FormLabel color="white" fontSize="sm" htmlFor="data-list-select">
           {label}
         </FormLabel>
       )}
