@@ -1,4 +1,4 @@
-import { zodResolver } from "@hookform/resolvers/zod"
+import { yupResolver } from "@hookform/resolvers/yup"
 import React from "react"
 import {
   Control,
@@ -113,7 +113,7 @@ export default function useForm(params: HookParams = {}): HookResponse {
   const useFormReactHookFormPayload = useFormReactHookForm({
     ...defaultFormParams,
     ...otherParams,
-    resolver: schema ? zodResolver(schema) : undefined,
+    resolver: schema ? yupResolver(schema) : undefined,
   })
 
   const {

@@ -1,15 +1,14 @@
-import { Box, Flex, Icon, Stack, IconButton, Text, HStack } from "@chakra-ui/react"
+import { Box, Stack, Text } from "@chakra-ui/react"
 import FormInput from "app/core/components/Form/FormInput"
 import FormSelect from "app/core/components/Form/FormSelect"
 import Button from "app/core/components/Button"
 import { useFieldArray } from "react-hook-form"
-import { BsPlus, BsTrash } from "react-icons/bs"
 import { useEffect } from "react"
 
-const RsvpForm = ({ control, noOfGuests }) => {
+const RsvpForm = ({ control, noOfGuests, isLoading, isSubmitting }) => {
   const { fields, append, remove } = useFieldArray({
     control,
-    name: "rsvp",
+    name: "users",
   })
 
   useEffect(() => {
@@ -18,7 +17,7 @@ const RsvpForm = ({ control, noOfGuests }) => {
     const oldVal = fields.length
     if (newVal > oldVal) {
       // append tickets to field array
-      for (let i = 0; i < newVal; i++) {
+      for (let i = oldVal; i < newVal; i++) {
         append({ name: "", email: "", phoneNumber: "", meals: [] })
       }
     } else {
@@ -50,24 +49,23 @@ const RsvpForm = ({ control, noOfGuests }) => {
             <Text fontSize={{ md: "lg" }} fontWeight="bold" color="white">
               Person {id}
             </Text>
-            <FormInput id={`rsvp.${i}.name`} name={`rsvp.${i}.name`} placeholder="Your name" />
+            <FormInput id={`users.${i}.name`} name={`users.${i}.name`} placeholder="Your name" />
             <FormInput
-              id={`rsvp.${i}.email`}
+              id={`users.${i}.email`}
               type="email"
-              name={`rsvp.${i}.email`}
+              name={`users.${i}.email`}
               placeholder="Your email"
             />
             <FormInput
-              id={`rsvp.${i}.phone`}
-              name={`rsvp.${i}.phone`}
+              id={`users.${i}.phone`}
+              name={`users.${i}.phone`}
               placeholder="Your phone number"
             />
             <FormSelect
-              id={`rsvp.${i}.meals`}
-              name={`rsvp.${i}.meals`}
+              id={`users.${i}.meal`}
+              name={`users.${i}.meal`}
               placeholder="Meal preferences"
               options={["Meat", "Vegetables"]}
-              isMulti
             />
           </Stack>
         )
@@ -84,6 +82,7 @@ const RsvpForm = ({ control, noOfGuests }) => {
           color="primaryBackground"
           _hover={{ bg: "gold" }}
           _focus={{ bg: "gold" }}
+          isLoading={isLoading || isSubmitting}
         />
       </Box>
     </Stack>

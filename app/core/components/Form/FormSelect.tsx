@@ -51,7 +51,7 @@ const DataListSelect = ({
   const optionsList = getOptions()
 
   return (
-    <FormControl w={formWidth}>
+    <FormControl isInvalid={error} w={formWidth}>
       {label && (
         <FormLabel color="white" fontSize="sm" htmlFor="data-list-select">
           {label}

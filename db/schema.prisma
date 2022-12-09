@@ -17,7 +17,7 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   name      String
-  email     String?   @unique
+  email     String   @unique
   phone     String?   @unique
 
   reservations Reservation[]
@@ -72,5 +72,5 @@ type Users {
   name  String
   email String
   phone String
-  meals String[]
+  meal String
 }

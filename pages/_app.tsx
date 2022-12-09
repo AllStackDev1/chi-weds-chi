@@ -1,9 +1,11 @@
 import { ErrorFallbackProps, ErrorComponent, ErrorBoundary, AppProps } from "@blitzjs/next"
 import { AuthenticationError, AuthorizationError } from "blitz"
 import React from "react"
+import SimpleReactLightbox from "simple-react-lightbox"
 import { withBlitz } from "app/blitz-client"
 import "@fontsource/cormorant-garamond"
 import "@fontsource/lato"
+import "../public/main.css"
 
 import { ChakraProvider } from "@chakra-ui/react"
 import { theme } from "app/theme"
@@ -32,9 +34,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   const getLayout = Component.getLayout || ((page) => page)
   return (
     <ChakraProvider theme={theme}>
-      <ErrorBoundary FallbackComponent={RootErrorFallback}>
-        {getLayout(<Component {...pageProps} />)}
-      </ErrorBoundary>
+      <SimpleReactLightbox>
+        <ErrorBoundary FallbackComponent={RootErrorFallback}>
+          {getLayout(<Component {...pageProps} />)}
+        </ErrorBoundary>
+      </SimpleReactLightbox>
     </ChakraProvider>
   )
 }

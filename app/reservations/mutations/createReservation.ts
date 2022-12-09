@@ -7,19 +7,20 @@ const User = z.object({
   name: z.string(),
   email: z.string(),
   phone: z.string(),
-  meals: z.array(z.string()).min(1),
+  meal: z.string(),
 })
+
+type UserInfo = z.infer<typeof User>
 
 const CreateReservation = z.object({
   users: z.array(User),
 })
 
 export default resolver.pipe(resolver.zod(CreateReservation), async ({ users }) => {
-  const firstUser = users[0]
+  const firstUser = users[0] as UserInfo
   const result = await db.user.findFirst({
     where: {
       email: firstUser?.email,
-      OR: { phone: firstUser?.phone },
     },
   })
   if (!result) {
@@ -46,6 +47,6 @@ export default resolver.pipe(resolver.zod(CreateReservation), async ({ users }) 
 
     return "Something went wrong"
   } else {
-    return `User with email ${firstUser?.email} or phone ${firstUser?.phone} already exists`
+    return `User with email ${firstUser?.email} already exists`
   }
 })

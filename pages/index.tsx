@@ -8,7 +8,7 @@ import CTA from "../app/core/components/CTA"
 const Home: BlitzPage = () => {
   return (
     <Layout title="Home">
-      <Header image="/background.jpg">
+      <Header image="/background.jpg" bgPos="0% -270px">
         {/* <Header image="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"> */}
         <Image src="/slider-2.png" alt="slider" />
       </Header>

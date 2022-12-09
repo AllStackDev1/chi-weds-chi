@@ -5,9 +5,9 @@ import Header from "../app/core/components/Header"
 import Headings from "../app/core/components/Headings"
 import CTA from "../app/core/components/CTA"
 
-const Gallery: BlitzPage = () => {
+const Gallerys: BlitzPage = () => {
   return (
-    <Layout title="Gallery">
+    <Layout title="Gallerys">
       <Header image="/background.jpg">
         <Image src="/slider-2.png" alt="slider" />
       </Header>
@@ -30,4 +30,4 @@ const Gallery: BlitzPage = () => {
   )
 }
 
-export default Gallery
+export default Gallerys
