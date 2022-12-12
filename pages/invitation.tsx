@@ -4,6 +4,7 @@ import { Box, Flex, useMediaQuery } from "@chakra-ui/react"
 import { Document, Page, pdfjs } from "react-pdf"
 import CTA from "../app/core/components/CTA"
 import "react-pdf/dist/esm/Page/AnnotationLayer.css"
+import Registry from "app/core/components/Registry"
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`
 
 const Invitation = () => {
@@ -44,12 +45,16 @@ const Invitation = () => {
         </Document>
       </Flex>
 
-      <Box opacity={showCTA ? 1 : 0.5}>
+      <Box px={{ base: 4, md: 0 }}>
         <CTA
           subtitle=""
           btnTitle="RSVP"
           title="Please, take a moment and respond to our invitation."
         />
+      </Box>
+
+      <Box px={{ base: 4, md: 0 }}>
+        <Registry />
       </Box>
     </Layout>
   )

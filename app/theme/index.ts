@@ -30,6 +30,7 @@ export const theme = extendTheme({
       "html, body, #__next": {
         height: "100%",
         bg: "#3e1021",
+        width: "100%",
         scrollBehavior: "smooth",
       },
       body: {

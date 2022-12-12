@@ -1,8 +1,8 @@
 import { ErrorFallbackProps, ErrorComponent, ErrorBoundary, AppProps } from "@blitzjs/next"
 import { AuthenticationError, AuthorizationError } from "blitz"
-import React from "react"
 import SimpleReactLightbox from "simple-react-lightbox"
 import { withBlitz } from "app/blitz-client"
+import { ScrollingProvider } from "react-scroll-section"
 import "@fontsource/cormorant-garamond"
 import "@fontsource/lato"
 import "../public/main.css"
@@ -35,9 +35,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
       <SimpleReactLightbox>
-        <ErrorBoundary FallbackComponent={RootErrorFallback}>
-          {getLayout(<Component {...pageProps} />)}
-        </ErrorBoundary>
+        <ScrollingProvider>
+          <ErrorBoundary FallbackComponent={RootErrorFallback}>
+            {getLayout(<Component {...pageProps} />)}
+          </ErrorBoundary>
+        </ScrollingProvider>
       </SimpleReactLightbox>
     </ChakraProvider>
   )

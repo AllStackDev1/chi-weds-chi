@@ -1,5 +1,6 @@
+import { useEffect } from "react"
 import Header from "app/core/components/Header"
-import { Heading, Icon, Image, Stack, Text, useToast } from "@chakra-ui/react"
+import { Box, Flex, Heading, Icon, Image, Stack, Text, useToast } from "@chakra-ui/react"
 import { useMutation } from "@blitzjs/rpc"
 import Layout from "app/core/layouts/Layout"
 import useForm from "app/core/hooks/useForm"
@@ -8,8 +9,16 @@ import createReservation from "app/reservations/mutations/createReservation"
 import { BsX } from "react-icons/bs"
 import RsvpForm from "app/core/components/RSVPForm"
 import { ReservationSchema } from "../app/core/utils/validations"
+import { Section, useScrollSection } from "react-scroll-section"
+import Registry from "app/core/components/Registry"
 
 const Rsvp = () => {
+  const focusSection = useScrollSection("focus-section-rsvp")
+
+  useEffect(() => {
+    focusSection.onClick()
+  }, [focusSection])
+
   const [createUserOrderMutation, { status, isLoading }] = useMutation(createReservation)
   const toast = useToast()
 
@@ -72,7 +81,7 @@ const Rsvp = () => {
   const parsedNoOfGuests = parseInt(watchNoOfGuests)
 
   return (
-    <Layout title="RSVP">
+    <Layout title="RSVP" mainPx={4}>
       <Header image="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80">
         <Image src="/rsvp-img-1.png" alt="RSVP" />
       </Header>
@@ -80,20 +89,15 @@ const Rsvp = () => {
       {status === "success" ? (
         <CTA subtitle="HOPE TO SEE YOU" title="Thank you for responding!" />
       ) : (
-        <Stack py={{ base: 16, md: "7rem" }} spacing={{ base: 8, md: "4rem" }}>
+        <Section id="focus-section-rsvp">
           <Stack align="center" justify="center" w={{ md: 125 }} mx="auto" textAlign="center">
-            <Text color="gold">MAGICAL MOMENTS</Text>
-            <Heading as="h3" color="gold" fontSize={{ base: "2xl", md: "4xl" }}>
-              Will you attend to our special day?
+            <Heading as="h3" color="gold" w={{ md: "80%" }} fontSize={{ base: "2xl", md: "4xl" }}>
+              We are so excited to celebrate our wedding with you.
             </Heading>
             <Image src="/separator.png" alt="separator" />
-            <Text>
-              We are so excited to celebrate our wedding with you. Please fill out the form below to
-              help us plan for the big day. We can&apos;t wait to see you!
-            </Text>
           </Stack>
 
-          <Stack>
+          <Flex align="center" justify="center">
             {renderForm(
               <RsvpForm
                 control={control}
@@ -102,9 +106,17 @@ const Rsvp = () => {
                 isSubmitting={isSubmitting}
               />
             )}
-          </Stack>
-        </Stack>
+          </Flex>
+        </Section>
       )}
+
+      <CTA
+        btnTitle="RSVP"
+        subtitle=""
+        title="Please, take a moment and respond to our invitation."
+      />
+
+      <Registry />
     </Layout>
   )
 }

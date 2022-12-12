@@ -44,7 +44,7 @@ const Nav = () => {
       </Link>
 
       <HStack
-        spacing={{ base: 3, md: "1rem" }}
+        spacing={{ base: 2, md: "1rem" }}
         divider={<Divider orientation="vertical" h={{ base: 3, md: 5 }} borderColor="gray.600" />}
       >
         {navLinks.map((link) => (

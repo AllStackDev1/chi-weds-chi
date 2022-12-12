@@ -14,8 +14,8 @@ const Cta = ({
 }) => {
   return (
     <Stack
-      w="full"
       h={64}
+      w="full"
       bg="#f7f3f1"
       align="center"
       justify="center"

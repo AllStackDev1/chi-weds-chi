@@ -19,6 +19,7 @@ const Header = ({
       // bgImage={`url(${image})`}
       bgRepeat="no-repeat"
       rounded="md"
+      w="full"
       {...rest}
     >
       {children}

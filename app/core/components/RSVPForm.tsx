@@ -29,7 +29,7 @@ const RsvpForm = ({ control, noOfGuests, isLoading, isSubmitting }) => {
   }, [append, fields, fields.length, noOfGuests, remove])
 
   return (
-    <Stack spacing={6} align="center" justify="center" w={{ md: 120 }} mx="auto">
+    <Stack align="center" justify="center" spacing={6} w={{ base: "full", lg: 120 }}>
       <FormSelect
         name="noOfGuests"
         label="Select the number of adult guests coming with you."
@@ -37,34 +37,33 @@ const RsvpForm = ({ control, noOfGuests, isLoading, isSubmitting }) => {
         options={[1, 2, 3, 4]}
       />
       {fields.map((field, i) => {
-        const id = i + 1
+        const u = i === 0
 
         return (
-          <Stack
-            spacing={6}
-            key={`${field.id}_${i}`}
-            color="black"
-            w={{ base: "full", lg: "initial" }}
-          >
+          <Stack w="full" spacing={6} key={`${field.id}_${i}`} color="black">
             <Text fontSize={{ md: "lg" }} fontWeight="bold" color="white">
-              Person {id}
+              {` ${u ? "You" : `Your plus ${i}`} `}
             </Text>
-            <FormInput id={`users.${i}.name`} name={`users.${i}.name`} placeholder="Your name" />
+            <FormInput
+              id={`users.${i}.name`}
+              name={`users.${i}.name`}
+              placeholder={`${u ? "Your" : `Your plus ${i}`} name`}
+            />
             <FormInput
               id={`users.${i}.email`}
               type="email"
               name={`users.${i}.email`}
-              placeholder="Your email"
+              placeholder={`${u ? "Your" : `Your plus ${i}`} email`}
             />
             <FormInput
               id={`users.${i}.phone`}
               name={`users.${i}.phone`}
-              placeholder="Your phone number"
+              placeholder={`${u ? "Your" : `Your plus ${i}`} phone number`}
             />
             <FormSelect
               id={`users.${i}.meal`}
               name={`users.${i}.meal`}
-              placeholder="Meal preferences"
+              placeholder={`${u ? "Your" : `Your plus ${i}`} meal preferences`}
               options={["Meat", "Vegetables"]}
             />
           </Stack>

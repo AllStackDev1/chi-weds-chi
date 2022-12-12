@@ -1,27 +1,34 @@
-import React from "react"
+import { ReactNode } from "react"
 import Head from "next/head"
 import { BlitzLayout } from "@blitzjs/next"
 import { FiChevronsUp } from "react-icons/fi"
 import ScrollToTop from "react-scroll-up"
-import { Box, Flex, Icon, IconButton, Stack, Text } from "@chakra-ui/react"
+import { Flex, Icon, IconButton, Stack, Text } from "@chakra-ui/react"
 import Nav from "../components/Nav"
 
-const Layout: BlitzLayout<{ title?: string; children?: React.ReactNode }> = ({
+const Layout: BlitzLayout<{ title?: string; mainPx?: number; children?: ReactNode }> = ({
   title,
+  mainPx,
   children,
 }) => {
   return (
-    <Stack m={{ md: 10 }} pos="relative">
+    <Stack m={{ md: 10 }} pos="relative" overflowX="hidden">
       <Head>
-        <title>{`chineduamaka | ${title}`}</title>
+        <title>{`chineduamaka ❤️ | ${title}`}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Nav />
 
-      <Box as="main" px={{ base: 4, md: 0 }} py={{ base: 6, md: 0 }} minH="100vh">
+      <Stack
+        as="main"
+        minH="100vh"
+        px={{ base: mainPx, md: 0 }}
+        spacing={{ base: 12, md: "12rem" }}
+        align="center"
+      >
         {children}
-      </Box>
+      </Stack>
 
       {/* @ts-expect-error */}
       <ScrollToTop showUnder={300}>
@@ -37,7 +44,7 @@ const Layout: BlitzLayout<{ title?: string; children?: React.ReactNode }> = ({
         />
       </ScrollToTop>
       <Flex as="footer" h={14} align="center" justify="center">
-        <Text fontSize="sm">Celebrating our marriage. chineduamaka 2023.</Text>
+        <Text fontSize="sm">Celebrating our marriage. chineduamaka ❤️ 2023.</Text>
       </Flex>
     </Stack>
   )
