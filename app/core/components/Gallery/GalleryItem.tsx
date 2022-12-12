@@ -1,4 +1,3 @@
-import React from "react"
 import { Box, Heading, List, ListIcon, ListItem, Stack, Text } from "@chakra-ui/react"
 import Link from "next/link"
 import moment from "moment"
@@ -27,11 +26,11 @@ const GalleryItem = ({ gallery }) => {
             <Heading as="h3" fontSize={{ md: "2xl" }}>
               {gallery?.name}
             </Heading>
-            <Text color="gray.200">{moment(gallery?.date).format("LL")}</Text>
+            <Text color="gray.200">{moment(gallery?.updatedAt).format("LL")}</Text>
           </Stack>
           <List>
             <ListItem>
-              view gallery
+              View {gallery.name}
               <ListIcon
                 as={BsArrowRight}
                 className="group-hover:motion-safe:animate-bounce"

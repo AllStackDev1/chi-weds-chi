@@ -1,7 +1,9 @@
 import { Suspense } from "react"
-import { SimpleGrid, Stack } from "@chakra-ui/react"
+import { Box, SimpleGrid, Stack } from "@chakra-ui/react"
 import GalleryItem from "app/core/components/Gallery/GalleryItem"
 import Layout from "app/core/layouts/Layout"
+import Cta from "app/core/components/CTA"
+import Registry from "app/core/components/Registry"
 
 export const GalleriesList = ({ gallery }) => {
   return (
@@ -18,25 +20,33 @@ export const GalleriesList = ({ gallery }) => {
 const GalleriesPage = () => {
   const gallery = [
     {
-      id: 1,
+      id: "videos",
       cover:
         "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80",
-      name: "Gallery 1",
-      date: "2021-01-01",
+      name: "Videos",
+      updatedAt: "2021-01-01",
     },
     {
-      id: 2,
+      id: "photos",
       cover:
         "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80",
-      name: "Gallery 2",
-      date: "2021-01-01",
+      name: "Photos",
+      updatedAt: "2021-01-01",
     },
   ]
   return (
-    <Layout title="Gallerys" mainPx={4}>
+    <Layout title="Gallery" mainPx={4}>
       <Suspense fallback={<div>Loading...</div>}>
         <GalleriesList gallery={gallery} />
       </Suspense>
+
+      <Cta
+        btnTitle="RSVP"
+        subtitle=""
+        title="Please, take a moment and respond to our invitation."
+      />
+
+      <Registry />
     </Layout>
   )
 }

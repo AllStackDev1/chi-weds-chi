@@ -18,12 +18,12 @@ const GalleryHeader = ({
     <Flex
       align="center"
       justify="center"
-      px={{ base: 6, sm: 10, lg: 16, xl: 40 }}
       bgImage={`linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url(${image})`}
       bgPos="center"
       bgSize="cover"
       bgRepeat="no-repeat"
       h={{ base: "80vh", md: "100vh" }}
+      w={{ base: "full" }}
       direction="column"
       pos="relative"
       color="white"

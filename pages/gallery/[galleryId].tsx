@@ -6,6 +6,9 @@ import { SRLWrapper } from "simple-react-lightbox"
 
 import Layout from "app/core/layouts/Layout"
 import Image from "app/core/components/Image"
+import { useParams } from "@blitzjs/next"
+import Cta from "app/core/components/CTA"
+import Registry from "app/core/components/Registry"
 
 export const Gallery = ({ gallery }) => {
   return (
@@ -20,7 +23,7 @@ export const Gallery = ({ gallery }) => {
         },
       }}
     >
-      <Box className="masonry-grid" my={16} px={{ md: 6 }}>
+      <Box className="masonry-grid">
         {gallery.images.map((image: any) => (
           <Image key={image} src={image} alt={gallery?.name} />
         ))}
@@ -30,6 +33,8 @@ export const Gallery = ({ gallery }) => {
 }
 
 const ShowGalleryPage = () => {
+  const params = useParams()
+
   const gallery = {
     id: 1,
     cover:
@@ -50,12 +55,20 @@ const ShowGalleryPage = () => {
     ],
   }
   return (
-    <Layout>
+    <Layout title={`Gallery | ${params.galleryId}`} mainPx={4}>
       <GalleryHeader image={gallery?.cover} title={gallery?.name} date={gallery?.date} />
 
       <Suspense fallback={<p>loading...</p>}>
         <Gallery gallery={gallery} />
       </Suspense>
+
+      <Cta
+        btnTitle="RSVP"
+        subtitle=""
+        title="Please, take a moment and respond to our invitation."
+      />
+
+      <Registry />
     </Layout>
   )
 }
