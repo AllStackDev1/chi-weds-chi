@@ -20,6 +20,7 @@ model User {
   email     String   @unique
   phone     String?  @unique
 
+  hashedPassword String?
   reservations   Reservation[]
   tokens         Token[]
   sessions       Session[]
