@@ -74,6 +74,7 @@ export function renderHook(
 }
 
 export const mockRouter: NextRouter = {
+  forward: () => {},
   basePath: "",
   pathname: "/",
   route: "/",
