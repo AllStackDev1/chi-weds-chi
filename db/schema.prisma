@@ -18,11 +18,12 @@ model User {
   updatedAt DateTime @updatedAt
   name      String
   email     String   @unique
-  phone     String?   @unique
+  phone     String?  @unique
 
-  reservations Reservation[]
-  tokens       Token[]
-  sessions     Session[]
+  hashedPassword String?
+  reservations   Reservation[]
+  tokens         Token[]
+  sessions       Session[]
 }
 
 model Session {
@@ -72,5 +73,5 @@ type Users {
   name  String
   email String
   phone String
-  meal String
+  meal  String
 }

@@ -138,9 +138,9 @@ const DataListSelect = ({
                   return {
                     ...provided,
                     color: isSelected ? "white" : "#141414",
-                    backgroundColor: isSelected ? "#f91e53" : "none",
+                    backgroundColor: isSelected ? "#3e1021" : "none",
                     "&:hover": {
-                      backgroundColor: "#f91e53",
+                      backgroundColor: "#3e1021",
                       color: "white",
                     },
                   }
