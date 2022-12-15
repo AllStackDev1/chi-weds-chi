@@ -16,7 +16,7 @@ const Layout: BlitzLayout<{ title?: string; mainPx?: number; children?: ReactNod
   const url = "https://www.chineduamaka.rsvp"
   const _title = `CHINEDUAMAKA ❤️ | ${title?.toUpperCase()}`
   const description =
-    "Join us as we move our friendship to forever in love ❤️. Yes! we are getting married..."
+    "Join us as we move our friendship to forever in love ❤️. Yes! we are getting married...Come join us on the 21st of Jan 2023s"
   const imageUrl =
     "https://res.cloudinary.com/allstackdev/image/upload/v1671103699/chineduamaka/social-image_lvfkyi.jpg"
 
