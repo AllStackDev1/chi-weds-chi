@@ -9,6 +9,7 @@ import {
   ListIcon,
   ListItem,
   Stack,
+  useMediaQuery,
   VStack,
 } from "@chakra-ui/react"
 import { HiLocationMarker, HiPhone } from "react-icons/hi"
@@ -19,6 +20,10 @@ import Registry from "app/core/components/Registry"
 import { Section, useScrollSection } from "react-scroll-section"
 
 const Locations = () => {
+  const [isLargerThan768] = useMediaQuery("(min-width: 768px)", {
+    ssr: true,
+    fallback: false, // return false on the server, and re-evaluate on the client side
+  })
   const focusSection = useScrollSection("focus-section-locations")
 
   useEffect(() => {
@@ -27,7 +32,13 @@ const Locations = () => {
 
   return (
     <Layout title="Locations" mainPx={4}>
-      <Header image="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80">
+      <Header
+        image={
+          isLargerThan768
+            ? "https://res.cloudinary.com/allstackdev/image/upload/v1671074284/chineduamaka/231A0262-Edit-short_oaayji.webp"
+            : "https://res.cloudinary.com/allstackdev/image/upload/v1671072616/chineduamaka/231A0329-Edit_kyxqft.webp"
+        }
+      >
         <Image src="/rsvp-img-1.png" alt="RSVP" />
       </Header>
 

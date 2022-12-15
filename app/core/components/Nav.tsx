@@ -34,7 +34,7 @@ const Nav = () => {
       justify="center"
       textAlign="center"
       pos={{ md: "absolute" }}
-      py={{ base: 4, md: 0 }}
+      py={{ base: 4, md: 6 }}
       spacing={{ base: 4, md: 10 }}
     >
       <Link href="/">

@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import Header from "app/core/components/Header"
-import { Box, Flex, Heading, Icon, Image, Stack, Text, useToast } from "@chakra-ui/react"
+import { Flex, Heading, Icon, Image, Stack, Text, useMediaQuery, useToast } from "@chakra-ui/react"
 import { useMutation } from "@blitzjs/rpc"
 import Layout from "app/core/layouts/Layout"
 import useForm from "app/core/hooks/useForm"
@@ -13,6 +13,10 @@ import { Section, useScrollSection } from "react-scroll-section"
 import Registry from "app/core/components/Registry"
 
 const Rsvp = () => {
+  const [isLargerThan768] = useMediaQuery("(min-width: 768px)", {
+    ssr: true,
+    fallback: false, // return false on the server, and re-evaluate on the client side
+  })
   const focusSection = useScrollSection("focus-section-rsvp")
 
   useEffect(() => {
@@ -82,7 +86,13 @@ const Rsvp = () => {
 
   return (
     <Layout title="RSVP" mainPx={4}>
-      <Header image="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80">
+      <Header
+        image={
+          isLargerThan768
+            ? "https://res.cloudinary.com/allstackdev/image/upload/v1671074284/chineduamaka/231A0619-Edit-short_qoyk21.webp"
+            : "https://res.cloudinary.com/allstackdev/image/upload/v1671072617/chineduamaka/231A0619-Edit_m1btxo.webp"
+        }
+      >
         <Image src="/rsvp-img-1.png" alt="RSVP" />
       </Header>
 
@@ -109,12 +119,6 @@ const Rsvp = () => {
           </Flex>
         </Section>
       )}
-
-      <CTA
-        btnTitle="RSVP"
-        subtitle=""
-        title="Please, take a moment and respond to our invitation."
-      />
 
       <Registry />
     </Layout>

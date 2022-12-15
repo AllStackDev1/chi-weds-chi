@@ -9,7 +9,6 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 
 const Invitation = () => {
   const [numPages, setNumPages] = React.useState(null)
-  const [showCTA, setShowCTA] = React.useState(false)
   const [isLargerThan768] = useMediaQuery("(min-width: 768px)", {
     ssr: true,
     fallback: false, // return false on the server, and re-evaluate on the client side
@@ -17,9 +16,6 @@ const Invitation = () => {
 
   function onDocumentLoadSuccess({ numPages: nextNumPages }) {
     setNumPages(nextNumPages)
-    setTimeout(() => {
-      setShowCTA(true)
-    }, 5000)
   }
 
   function removeTextLayerOffset() {
@@ -33,7 +29,11 @@ const Invitation = () => {
   return (
     <Layout title="Invitation">
       <Flex mt={{ lg: 60 }} justify="center">
-        <Document file="./invitation.pdf" onLoadSuccess={onDocumentLoadSuccess}>
+        <Document
+          file="./invitation.pdf"
+          loading={<div>Loading Invitation Card...</div>}
+          onLoadSuccess={onDocumentLoadSuccess}
+        >
           {Array.from(new Array(numPages), (el, index) => (
             <Page
               key={`page_${index + 1}`}
@@ -45,7 +45,7 @@ const Invitation = () => {
         </Document>
       </Flex>
 
-      <Box px={{ base: 4, md: 0 }}>
+      <Box w={{ md: "80%" }} px={{ base: 4, md: 0 }}>
         <CTA
           subtitle=""
           btnTitle="RSVP"

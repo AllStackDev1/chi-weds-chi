@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import Layout from "app/core/layouts/Layout"
 import { BlitzPage } from "@blitzjs/next"
-import { Image } from "@chakra-ui/react"
+import { Image, useMediaQuery } from "@chakra-ui/react"
 import Header from "../app/core/components/Header"
 import Headings from "../app/core/components/Headings"
 import CTA from "../app/core/components/CTA"
@@ -9,6 +9,10 @@ import Registry from "app/core/components/Registry"
 import { useScrollSection, Section } from "react-scroll-section"
 
 const Home: BlitzPage = () => {
+  const [isLargerThan768] = useMediaQuery("(min-width: 768px)", {
+    ssr: true,
+    fallback: false, // return false on the server, and re-evaluate on the client side
+  })
   const focusSection = useScrollSection("focus-section-home")
 
   useEffect(() => {
@@ -17,17 +21,18 @@ const Home: BlitzPage = () => {
 
   return (
     <Layout title="Home" mainPx={4}>
-      <Header image="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80">
+      <Header
+        image={
+          isLargerThan768
+            ? "https://res.cloudinary.com/allstackdev/image/upload/v1671074284/chineduamaka/231A0042-Edit-short_hzpcgs.webp"
+            : "https://res.cloudinary.com/allstackdev/image/upload/v1671072595/chineduamaka/231A0042-Edit_glnnph.webp"
+        }
+      >
         <Image src="/slider-2.png" alt="slider" />
       </Header>
 
       <Section id="focus-section-home">
-        <Headings
-          standout="BEGINNING OF TRUE LOVE"
-          title="A short timeline of our story"
-          subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm od tempor incidi
-            dunt ut labore et dolore magna aliqua ut enim minim veniam, quis nostrud."
-        />
+        <Headings standout="BEGINNING OF TRUE LOVE" title="A short timeline of our story" />
       </Section>
 
       <CTA
