@@ -19,8 +19,8 @@ const Headings = ({ standout, title }: { standout: string; title: string }) => {
       <VStack fontSize={{ base: "xs", lg: "md" }} lineHeight={{ base: "2", lg: "9" }}>
         <Text>
           Get a bottle of chilled water because it may be a long read but I will try to be concise,
-          as this love we are celebrating has spanned over a decade of friendship, which story needs
-          to be told…hehe.
+          as this love story we are celebrating has spanned over a decade of friendship, which story
+          needs to be told…hehe.
         </Text>
         <Image src="/separator.png" alt="separator" />
         <Text>
