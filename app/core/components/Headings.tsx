@@ -41,7 +41,7 @@ const Headings = ({ standout, title }: { standout: string; title: string }) => {
         <Text>
           This program will last for 6months, but I had another plan which was to join the Nigeria
           Defence Academy, I had to leave and defer the whole program because I had to go for the
-          screening - another period of not seeing each other, which lasted over a 1.
+          screening - another period of not seeing each other, which lasted over a year.
         </Text>
         <Image src="/separator.png" alt="separator" />
         <Text>
@@ -60,7 +60,7 @@ const Headings = ({ standout, title }: { standout: string; title: string }) => {
         <Image src="/separator.png" alt="separator" />
         <Text>
           Fast track to 2022 I ask the love of my life, if she would want to spend the rest of her
-          days with me, and yeah there was no delay in this one, and she said YES!!!
+          days with me, and it was a said YES!!!
         </Text>
       </VStack>
     </Stack>

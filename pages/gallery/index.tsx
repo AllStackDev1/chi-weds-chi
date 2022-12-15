@@ -58,7 +58,6 @@ import { Suspense } from "react"
 import GalleryHeader from "app/core/components/Gallery/GalleryHeader"
 import { Box, useMediaQuery } from "@chakra-ui/react"
 import { SRLWrapper } from "simple-react-lightbox"
-
 import Layout from "app/core/layouts/Layout"
 import Image from "app/core/components/Image"
 import Cta from "app/core/components/CTA"

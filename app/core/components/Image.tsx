@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Box, BoxProps } from "@chakra-ui/react"
 import NextImage from "next/image"
 import { cn } from "../utils"
+import { CldImage } from "next-cloudinary"
 
 const Image = ({
   src,
@@ -20,7 +21,7 @@ const Image = ({
       className={`w-full aspect-w-1 aspect-h-1 bg-gray-200 overflow-hidden xl:aspect-w-7 xl:aspect-h-2`}
       {...rest}
     >
-      <NextImage
+      <CldImage
         src={src}
         alt={alt}
         width={width}
@@ -34,6 +35,20 @@ const Image = ({
         )}
         onLoadingComplete={() => setLoading(false)}
       />
+      {/* <NextImage
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        sizes="(max-width: 800px) 100vw, 800px"
+        className={cn(
+          `group-hover:opacity-75 duration-700 ease-in-out ${
+            center ? "object-middle" : "object-cover"
+          }`,
+          isLoading ? "grayscale blur-2xl scale-110" : "grayscale-0 blur-0 scale-100"
+        )}
+        onLoadingComplete={() => setLoading(false)}
+      /> */}
     </Box>
   )
 }
