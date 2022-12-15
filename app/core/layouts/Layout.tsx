@@ -18,7 +18,7 @@ const Layout: BlitzLayout<{ title?: string; mainPx?: number; children?: ReactNod
   const description =
     "Join us as we move our friendship to forever in love ❤️. Yes! we are getting married..."
   const imageUrl =
-    "https://res.cloudinary.com/allstackdev/image/upload/v1671074290/chineduamaka/231A0619-Edit-short_qoyk21.webp"
+    "https://res.cloudinary.com/allstackdev/image/upload/v1671103699/chineduamaka/social-image_lvfkyi.jpg"
 
   return (
     <Stack m={{ md: 10 }} pos="relative" overflowX="hidden">
