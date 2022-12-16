@@ -35,8 +35,8 @@ const Locations = () => {
       <Header
         image={
           isLargerThan768
-            ? "https://res.cloudinary.com/allstackdev/image/upload/v1671074284/chineduamaka/231A0262-Edit-short_oaayji.webp"
-            : "https://res.cloudinary.com/allstackdev/image/upload/v1671072616/chineduamaka/231A0329-Edit_kyxqft.webp"
+            ? "https://res.cloudinary.com/allstackdev/image/upload/v1671176903/chineduamaka/231A0262-Edit-short-1_xyjijm.webp"
+            : "https://res.cloudinary.com/allstackdev/image/upload/v1671176825/chineduamaka/231A0262-Edit-1_hg66do.webp"
         }
       >
         <Image src="/rsvp-img-1.png" alt="RSVP" />

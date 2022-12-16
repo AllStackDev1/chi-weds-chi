@@ -24,8 +24,8 @@ const Home: BlitzPage = () => {
       <Header
         image={
           isLargerThan768
-            ? "https://res.cloudinary.com/allstackdev/image/upload/v1671074284/chineduamaka/231A0042-Edit-short_hzpcgs.webp"
-            : "https://res.cloudinary.com/allstackdev/image/upload/v1671072595/chineduamaka/231A0042-Edit_glnnph.webp"
+            ? "https://res.cloudinary.com/allstackdev/image/upload/v1671176475/chineduamaka/231A0042-Edit-short_hzpcgs_rskudr.webp"
+            : "https://res.cloudinary.com/allstackdev/image/upload/v1671176648/chineduamaka/231A0042-Edit-1_u6dtid.webp"
         }
       >
         <Image src="/slider-2.png" alt="slider" />

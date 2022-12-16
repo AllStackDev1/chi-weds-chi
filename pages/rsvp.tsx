@@ -89,8 +89,8 @@ const Rsvp = () => {
       <Header
         image={
           isLargerThan768
-            ? "https://res.cloudinary.com/allstackdev/image/upload/v1671074284/chineduamaka/231A0619-Edit-short_qoyk21.webp"
-            : "https://res.cloudinary.com/allstackdev/image/upload/v1671072617/chineduamaka/231A0619-Edit_m1btxo.webp"
+            ? "https://res.cloudinary.com/allstackdev/image/upload/v1671177152/chineduamaka/231A0619-Edit-short-1_feh0iu.webp"
+            : "https://res.cloudinary.com/allstackdev/image/upload/v1671177265/chineduamaka/231A0619-Edit_1_vkoyn3.jpg"
         }
       >
         <Image src="/rsvp-img-1.png" alt="RSVP" />
