@@ -31,9 +31,9 @@ const Home: BlitzPage = () => {
         <Image src="/slider-2.png" alt="slider" />
       </Header>
 
-      {/* <Section id="focus-section-home">
+      <Section id="focus-section-home">
         <Headings standout="BEGINNING OF TRUE LOVE" title="A short timeline of our story" />
-      </Section> */}
+      </Section>
 
       <CTA
         btnTitle="RSVP"
