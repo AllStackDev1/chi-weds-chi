@@ -102,7 +102,7 @@ const ShowGalleryPage = () => {
     images: [
       "https://res.cloudinary.com/allstackdev/image/upload/v1671072606/chineduamaka/231A0117-Edit_bplgsj.webp",
       "https://res.cloudinary.com/allstackdev/image/upload/v1671072623/chineduamaka/231A0744-Edit_llgvr3.webp",
-      "https://res.cloudinary.com/allstackdev/image/upload/v1671072619/chineduamaka/231A0870-Edit_gfzwsk.webp",
+      "https://res.cloudinary.com/allstackdev/image/upload/v1671358623/chineduamaka/231A0302-Edit_wk8e5b.webp",
       "https://res.cloudinary.com/allstackdev/image/upload/v1671072607/chineduamaka/231A0051-Edit_afghpv.webp",
       "https://res.cloudinary.com/allstackdev/image/upload/v1671072595/chineduamaka/231A0042-Edit_glnnph.webp",
       "https://res.cloudinary.com/allstackdev/image/upload/v1671072610/chineduamaka/231A0262-Edit_kkecca.webp",
