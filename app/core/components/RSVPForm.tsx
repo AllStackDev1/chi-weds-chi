@@ -64,7 +64,7 @@ const RsvpForm = ({ control, noOfGuests, isLoading, isSubmitting }) => {
               id={`users.${i}.meal`}
               name={`users.${i}.meal`}
               placeholder={`${u ? "Your" : `Your plus ${i}`} meal preferences`}
-              options={["Fried Rice", "Jellof Rice", "Egwusi Soup", "Bitter Leaf", "Amala"]}
+              options={["Fried Rice", "Jellof Rice", "Egwusi Soup", "Bitter Leaf", "Amala & Ewedu"]}
             />
           </Stack>
         )
