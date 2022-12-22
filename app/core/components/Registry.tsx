@@ -21,7 +21,12 @@ const Registry = () => {
         you can find some pre-selected items in the registry below. We greatly appreciate your
         generosity, and can’t wait to see you soon to celebrate.
       </Text>
-      <ChakraLink target="_blank" href="https://paystack.shop/chineduamaka" passHref as={Link}>
+      <ChakraLink
+        target="_blank"
+        href="https://paystack.shop/chinedu-and-chiamaka"
+        passHref
+        as={Link}
+      >
         <Button
           mt={4}
           px={8}
