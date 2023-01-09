@@ -39,7 +39,7 @@ const Locations = () => {
             : "https://res.cloudinary.com/allstackdev/image/upload/v1671176825/chineduamaka/231A0262-Edit-1_hg66do.webp"
         }
       >
-        <Image src="/rsvp-img-1.png" alt="RSVP" />
+        <Image src="/welcome.png" alt="Welcome to our wedding" />
       </Header>
 
       <Section id="focus-section-locations" style={{ width: "100%" }}>

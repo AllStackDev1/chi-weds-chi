@@ -93,7 +93,7 @@ const Rsvp = () => {
             : "https://res.cloudinary.com/allstackdev/image/upload/v1671177265/chineduamaka/231A0619-Edit_1_vkoyn3.jpg"
         }
       >
-        <Image src="/rsvp-img-1.png" alt="RSVP" />
+        <Image src="/celebrate-with-us.png" alt="come celebrate with us" />
       </Header>
 
       {status === "success" ? (

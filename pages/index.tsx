@@ -28,7 +28,7 @@ const Home: BlitzPage = () => {
             : "https://res.cloudinary.com/allstackdev/image/upload/v1671176648/chineduamaka/231A0042-Edit-1_u6dtid.webp"
         }
       >
-        <Image src="/slider-2.png" alt="slider" />
+        <Image src="/me-&-u.png" alt="Me & You 4ever" />
       </Header>
 
       <Section id="focus-section-home">

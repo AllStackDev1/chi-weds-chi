@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import { Flex, FlexProps } from "@chakra-ui/react"
+import { Box, Flex, FlexProps, Heading, Text } from "@chakra-ui/react"
 
 const Header = ({
   image,
@@ -8,21 +8,28 @@ const Header = ({
 }: { image: string; children?: ReactNode } & FlexProps) => {
   return (
     <Flex
+      w="full"
       as="header"
+      rounded="md"
+      pos="relative"
       align="center"
-      justify="center"
-      h={{ base: "70vh", md: "90vh" }}
       bgPos="center"
       bgSize="cover"
-      px={{ base: 6, md: 0 }}
-      bgImage={`linear-gradient(to right, rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(${image})`}
-      // bgImage={`url(${image})`}
+      flexDir="column"
+      justify="center"
       bgRepeat="no-repeat"
-      rounded="md"
-      w="full"
+      px={{ base: 6, md: 0 }}
+      h={{ base: "70vh", md: "90vh" }}
+      bgImage={`linear-gradient(to right, rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(${image})`}
       {...rest}
     >
       {children}
+
+      <Box pos="absolute" bottom={20}>
+        <Heading as="h1" color="gold" opacity={0.7} fontSize={{ base: "4xl", md: "8xl" }}>
+          21st January 2023
+        </Heading>
+      </Box>
     </Flex>
   )
 }

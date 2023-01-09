@@ -3,7 +3,7 @@ import Head from "next/head"
 import { BlitzLayout } from "@blitzjs/next"
 import { FiChevronsUp } from "react-icons/fi"
 import ScrollToTop from "react-scroll-up"
-import { Box, Flex, Icon, IconButton, Stack, Text } from "@chakra-ui/react"
+import { Box, Flex, Icon, IconButton, Stack, Text, VStack } from "@chakra-ui/react"
 import Nav from "../components/Nav"
 import { useRouter } from "next/router"
 
@@ -77,9 +77,23 @@ const Layout: BlitzLayout<{ title?: string; mainPx?: number; children?: ReactNod
           icon={<Icon as={FiChevronsUp} boxSize={8} />}
         />
       </ScrollToTop>
-      <Flex as="footer" h={14} align="center" justify="center">
-        <Text fontSize="sm">Celebrating our marriage. chineduamaka ❤️ 2023.</Text>
-      </Flex>
+      <VStack as="footer" spacing={1}>
+        <Flex align="center" justify="center">
+          <Text fontSize="sm">Celebrating our marriage - #chineduamaka ❤️ 2023.</Text>
+        </Flex>
+        <Flex align="center" justify="center">
+          <Text fontSize="x-small">
+            Designed & Developed by{" "}
+            <a href="https://felixyeboah.dev/" target="_blank" rel="noreferrer">
+              Felix Yeboah
+            </a>{" "}
+            &{" "}
+            <a href="https://allstackdev.com/" target="_blank" rel="noreferrer">
+              Chinedu Ekene Okpala
+            </a>
+          </Text>
+        </Flex>
+      </VStack>
     </Stack>
   )
 }
